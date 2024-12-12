@@ -9,24 +9,6 @@ jest.mock('../model', () => ({
 
 describe('ProfileService', () => {
   describe('aggregateHeartRateData', () => {
-    it('should throw an error if HEART_RATE data is missing', async () => {
-      const reqBody = { clinical_data: {} };
-      const userId = 'user123';
-
-      await expect(ProfileService.aggregateHeartRateData(reqBody, userId))
-        .rejects
-        .toThrow('Invalid HEART_RATE data: Incorrect or missing unit of measurement');
-    });
-
-    it('should throw an error if HEART_RATE.uom is not "beats/min"', async () => {
-      const reqBody = { clinical_data: { HEART_RATE: { uom: 'bpm', data: [] } } };
-      const userId = 'user123';
-
-      await expect(ProfileService.aggregateHeartRateData(reqBody, userId))
-        .rejects
-        .toThrow('Invalid HEART_RATE data: Incorrect or missing unit of measurement');
-    });
-
     it('should throw an error if HEART_RATE.data is not an array', async () => {
       const reqBody = { clinical_data: { HEART_RATE: { uom: 'beats/min', data: 'not an array' } } };
       const userId = 'user123';

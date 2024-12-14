@@ -65,7 +65,6 @@ This project has undergone significant structural changes to improve its functio
 
 - **ORM with Sequelize**: The database layer is managed using Sequelize ORM. This provides:
   - **Proper Error Handling**: Ensures that any database-related errors are caught and managed appropriately.
-  - **Strong ACID Compliance**: Particularly for payment-related data, ensuring data integrity and consistency.
 
 ### Authentication
 
